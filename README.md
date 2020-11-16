@@ -9,7 +9,7 @@ An implementation of a few string functions (for character arrays)
 
 4. void strCat(char* const str1, char const* const str2): append str2 to the end of str1.
 
-5. int findAndReplace(char* const mainString, char const* const oldSubstr, char const* const newSubstr, int const countRemove=INT_MAX):  Replaces oldSubstr in mainString with newSubstr. If the value of countRemove parameter is not passed while calling findAndReplace, all occurrences of oldSubstr are replaced with newSubstr. Otherwise it will replace as many occurrences from left to right as the value of countRemove. The function returns the actual count of total occurrences replaced.
+5. int findAndReplace(char* const mainString, char const* const oldSubstr, char const* const newSubstr, int const countRemove=INT_MAX):  Replaces oldSubstr in mainString with newSubstr. If the value of countRemove parameter is not passed while calling findAndReplace, all occurrences of oldSubstr are replaced with newSubstr. Otherwise it will replace as many occurrences from left to right as the value of countRemove ( provided actual occurrences>= countRemove). The function returns the actual count of total occurrences replaced.
 
 6. void intToCharArr(int const num, char* dest): Converts the integer value passed in num variable into a string and stores in dest.
 
