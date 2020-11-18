@@ -210,3 +210,123 @@ void intToCharArr(int const num, char* dest)
 	dest[i] = '\0';
 	reverseCharArr(dest);
 }
+
+void doubleToCharArr(double const num, char* dest, int decimalPlaces, bool roundOff)
+{
+	//converting the digits before the decimal point into string.
+	long long temp = abs(num);
+	int i = 0;
+	do
+	{
+		short digit = temp % 10;
+		temp = temp / 10;
+		dest[i] = digit + '0';
+		i++;
+		
+	} while (temp != 0);
+
+
+	if (num < 0)
+	{
+		dest[i] = '-';
+		i++;
+	}
+	
+	//reversing the digits.
+	for (int j = i - 1, k = 0; j > k; j--, k++)
+	{
+	
+		char temp = dest[j];
+		dest[j] = dest[k];
+		dest[k] = temp;
+	}
+	
+	//now converting the decimal part into string and appending to the end of character array
+	temp = abs(num);
+	double decimalPart = abs(num) - temp;
+	short count = 0;
+		
+	if (decimalPlaces > 0)
+	{
+		dest[i] = '.';
+		i++;
+	
+		while (count < decimalPlaces)
+		{
+			decimalPart = decimalPart * 10;
+			int digit = decimalPart;
+			dest[i] = digit + '0';
+			i++;
+			count++;
+			decimalPart = decimalPart - digit;
+			
+		}
+	}
+	//finished converting the required number of digits after decimal point into string.
+
+	//now going to round off the converted number if the first digit of decimal part which is now 
+	//not part of the converted decimal is greater than 4.
+	int firstDigitOfDroppedDecimalPart = decimalPart * 10;
+	
+	if (firstDigitOfDroppedDecimalPart >=5 && roundOff==true)
+	{
+		for (int j = i - 1; j >= 0; j--) //round off will begin from the end 
+		{								//and continue till the beginning (right to left)
+			if (dest[j] == '.')
+				continue;
+
+			if (dest[j] == '-')
+				break;
+
+			if (dest[j] < '9')
+			{
+				dest[j]++;
+				break;
+			}
+
+			
+			if (j == 0 || (j == 1 && dest[0] == '-'))
+			{ 
+				//this part converts number like 9.9 into 10.0 during rounding off.
+				
+				dest[j] = '0'; //we had a 9 at index j.
+
+				//shifting digits one step right so that there is a space for putting 1 (if the first digit of decimal number is 9 then it will be converted to 10 during round off)
+				for (int k = i - 1; k >= j; k--)
+				{
+					dest[k + 1] = dest[k];
+				}
+				dest[j] = '1';
+				i++;
+			}
+
+			else
+			{
+				dest[j] = '0';  //if this 9 is not the first digit, then no need to insert 1.
+			}
+
+		}
+
+	}
+	dest[i] = '\0';
+
+	/*it is possible to get -0 in the string if the number was -0.9, and
+	  and we passed decimalPlaces=0 with roundOff=false. similarly we 
+	  can get -0.00 if the number was -0.009 with decimalPlaces=2 and roundOff=0
+	  In such cases, we will remove - sign.*/
+	bool flag = false;
+	if (dest[0] == '-')
+	{
+		for (int k = 1; k < i && flag == false; k++)
+		{
+			if (dest[k]>='1' && dest[k]<='9')
+			{
+				flag = true;
+			}
+		}
+	}
+	
+	if (flag==false)
+	findAndReplace(dest, "-", "");  
+		
+}
