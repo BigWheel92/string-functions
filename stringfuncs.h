@@ -9,5 +9,4 @@ int findAndReplace(char* const mainString, char const* const oldSubstr, char con
 void intToCharArr(int const num, char *const dest);
 void longToCharArr(long long const num, char *const dest);
 void reverseCharArr(char *const arr);
-
 void doubleToCharArr(double const num, char*const arr, short const decimalPlaces=2, bool const roundOff=true);
