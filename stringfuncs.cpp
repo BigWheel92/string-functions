@@ -330,6 +330,6 @@ void doubleToCharArr(double const num, char *const dest, short const decimalPlac
 	}
 	
 	if (flag==false)
-	findAndReplace(dest, "-", "");  
+	findAndReplace(dest, "-", "", 1);  
 		
 }
