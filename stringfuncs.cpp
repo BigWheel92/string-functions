@@ -187,7 +187,7 @@ void longToStr(long long const num, char *const dest)
 		i++;
 	}
 	dest[i] = '\0';
-	reverseCharArr(dest);
+	reverseStr(dest);
 }
 
 void intToStr(int const num, char *const dest)
@@ -209,7 +209,7 @@ void intToStr(int const num, char *const dest)
 		i++;
 	}
 	dest[i] = '\0';
-	reverseCharArr(dest);
+	reverseStr(dest);
 }
 
 
