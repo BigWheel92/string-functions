@@ -3,7 +3,7 @@ An implementation of a few string functions (for character arrays)
 
 1. void strCopy(char* const dest, char const* const source); Copies source into dest.
 
-2. int strLength(char const* const arr); Returns the length of string in arr.
+2. int strLength(char const* const str); Returns the length of string in str.
 
 3. int strComp(char const* const str1, char const* const str2);  Compares str1 and str2 and returns 0 if both are equal, -1 is str1 is smaller and 1 if str1 is greater (based on ASCII differences)
 
@@ -15,6 +15,6 @@ An implementation of a few string functions (for character arrays)
 
 7. void longToStr(long long const num, char *const dest); Converts the long value passed in num variable into a string and stores it in dest.
 
-8. void reverseStr(char *const dest); Reverses the string.
+8. void reverseStr(char *const str); Reverses the string.
 
 9. void doubleToCharArr(double const num, char*const dest, short const decimalPlaces=2, bool const roundOff=true); Converts the given double number into a string. decimalPlaces is the number of digits to keep after the decimal point. If roundOff is true, then the number will be rounded off if the first digit of the ignored decimal part is greater than 4. For example: If num=12.935, decimalPlaces=2 and roundOff=true, then the number converted into string will be 12.94.
