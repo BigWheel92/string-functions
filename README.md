@@ -17,4 +17,4 @@ An implementation of a few string functions (for character arrays)
 
 8. void reverseStr(char *const str); Reverses the string.
 
-9. void doubleToCharArr(double const num, char*const dest, short const decimalPlaces=2, bool const roundOff=true); Converts the given double number into a string. decimalPlaces is the number of digits to keep after the decimal point. If roundOff is true, then the number will be rounded off if the first digit of the ignored decimal part is greater than 4. For example: If num=12.935, decimalPlaces=2 and roundOff=true, then the number converted into string will be 12.94.
+9. void doubleToStr(double const num, char*const dest, short const decimalPlaces=2, bool const roundOff=true); Converts the given double number into a string. decimalPlaces is the number of digits to keep after the decimal point. If roundOff is true, then the number will be rounded off if the first digit of the ignored decimal part is greater than 4. For example: If num=12.935, decimalPlaces=2 and roundOff=true, then the number converted into string will be 12.94.
