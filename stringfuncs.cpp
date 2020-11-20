@@ -22,7 +22,6 @@ void strCopy(char * const dest, char const*const source)
 
 int strLength(char const* const str)
 {
-	
 	int length = 0;
 
 	while (str[length] != '\0')
@@ -60,8 +59,6 @@ int strComp(char const* const str1, char const* const str2)
 	}
 	return 0;
 }
-
-
 
 
 int findAndReplace(char* const mainString, char const* const oldSubstr, char const* const newSubstr, int const countRemove )
