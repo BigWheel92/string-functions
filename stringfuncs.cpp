@@ -20,12 +20,12 @@ void strCopy(char * const dest, char const*const source)
 	//}
 }
 
-int strLength(char const* const arr)
+int strLength(char const* const str)
 {
 	
 	int length = 0;
 
-	while (arr[length] != '\0')
+	while (str[length] != '\0')
 	{
 		length++;
 	}
@@ -157,18 +157,18 @@ void strCat(char* const str1, char const* const str2)
 	str1[i] = '\0';
 }
 
-void reverseCharArr(char*const arr)
+void reverseStr(char*const str)
 {
-	for (int i = 0, j = strLength(arr)-1; i < j; i++, j--)
+	for (int i = 0, j = strLength(str)-1; i < j; i++, j--)
 	{
-		char temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
+		char temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
 	}
 }
 
 
-void longToCharArr(long long const num, char *const dest)
+void longToStr(long long const num, char *const dest)
 {
 	long long temp = abs(num);
 	short i = 0;
@@ -190,7 +190,7 @@ void longToCharArr(long long const num, char *const dest)
 	reverseCharArr(dest);
 }
 
-void intToCharArr(int const num, char *const dest)
+void intToStr(int const num, char *const dest)
 {
 	int temp = abs(num);
 	short i = 0;
@@ -213,7 +213,7 @@ void intToCharArr(int const num, char *const dest)
 }
 
 
-void doubleToCharArr(double const num, char *const dest, short const decimalPlaces, bool const roundOff)
+void doubleToStr(double const num, char *const dest, short const decimalPlaces, bool const roundOff)
 {
 	//converting the digits before the decimal point into string.
 	long long temp = abs(num);
