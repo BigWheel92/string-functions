@@ -13,28 +13,28 @@ int main()
 
 	char num[20];
 
-	longToCharArr(-23, num);
+	longToStr(-23, num);
 	cout << num << endl;
 
-	doubleToCharArr(-29.999, num, 2, true);
+	doubleToStr(-29.999, num, 2, true);
 	cout << num << endl;
 
-	doubleToCharArr(-29.999, num, 2, false);
+	doubleToStr(-29.999, num, 2, false);
 	cout << num << endl;
 
-	doubleToCharArr(-9.99, num, 1, true);
+	doubleToStr(-9.99, num, 1, true);
 	cout << num << endl;
 
-	doubleToCharArr(-0.999, num, 2, true);
+	doubleToStr(-0.999, num, 2, true);
 	cout << num << endl;
 
-	doubleToCharArr(-0.999, num, 0, true);
+	doubleToStr(-0.999, num, 0, true);
 	cout << num << endl;
 
-	doubleToCharArr(-0.999, num, 0, false);
+	doubleToChaStr(-0.999, num, 0, false);
 	cout << num << endl;
 
-	doubleToCharArr(-0.099, num, 1, false);
+	doubleToCharStr(-0.099, num, 1, false);
 	cout << num << endl;
 
 	return 0;
