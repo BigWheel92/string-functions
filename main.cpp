@@ -31,10 +31,10 @@ int main()
 	doubleToStr(-0.999, num, 0, true);
 	cout << num << endl;
 
-	doubleToChaStr(-0.999, num, 0, false);
+	doubleToStr(-0.999, num, 0, false);
 	cout << num << endl;
 
-	doubleToCharStr(-0.099, num, 1, false);
+	doubleToStr(-0.099, num, 1, false);
 	cout << num << endl;
 
 	return 0;
