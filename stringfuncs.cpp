@@ -331,7 +331,7 @@ void doubleToStr(double const num, char *const dest, short const decimalPlaces, 
 		
 }
 
-int stringToInt(char const * const src)
+int strToInt(char const * const src)
 {
 	int num = 0;
 	int i = 0;
