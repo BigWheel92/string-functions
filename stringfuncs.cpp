@@ -154,7 +154,7 @@ void strCat(char* const str1, char const* const str2)
 	str1[i] = '\0';
 }
 
-void reverseStr(char*const str)
+void reverseStr(char * const str)
 {
 	for (int i = 0, j = strLength(str)-1; i < j; i++, j--)
 	{
@@ -165,7 +165,7 @@ void reverseStr(char*const str)
 }
 
 
-void longToStr(long long const num, char *const dest)
+void longToStr(long long const num, char * const dest)
 {
 	long long temp = abs(num);
 	short i = 0;
@@ -187,7 +187,7 @@ void longToStr(long long const num, char *const dest)
 	reverseStr(dest);
 }
 
-void intToStr(int const num, char *const dest)
+void intToStr(int const num, char * const dest)
 {
 	int temp = abs(num);
 	short i = 0;
@@ -329,4 +329,23 @@ void doubleToStr(double const num, char *const dest, short const decimalPlaces, 
 	if (flag==false)
 	findAndReplace(dest, "-", "", 1);  
 		
+}
+
+int stringToInt(char const * const src)
+{
+	int num = 0;
+	int i = 0;
+
+	//ignoring the leading spaces, tabs and nextline characters.
+	while (src[i] == '\t' || src[i] == '\n' || src[i] == ' ')
+	{
+		i++;
+	}
+
+	for ( ;src[i]>='0' && src[i]<='9'; i++)
+	{
+		num = num * 10 + (src[i] - '0');
+	}
+
+	return num;
 }
