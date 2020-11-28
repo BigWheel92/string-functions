@@ -10,3 +10,4 @@ void intToStr(int const num, char *const dest);
 void longToStr(long long const num, char *const dest);
 void reverseStr(char *const str);
 void doubleToStr(double const num, char*const dest, short const decimalPlaces=2, bool const roundOff=true);
+int stringToInt(char const * const src); 
